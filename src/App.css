@@ -1,38 +1,177 @@
-.App {
+/*Button*/
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: none;
+  background-color: #000;
+  color: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.btn__line {
+  position: absolute;
+  display: block;
+}
+.btn__line_top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+.btn:hover .btn__line_top,
+.btn:active .btn__line_top {
+  left: 100%;
+  transition: 0.6s;
+  transition-delay: 0.25s;
+}
+.btn__line_bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #2196f3);
+}
+.btn:hover .btn__line_bottom,
+.btn:active .btn__line_bottom {
+  right: 100%;
+  transition: 0.6s;
+  transition-delay: 0.25s;
+}
+.btn__line_left {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, #2196f3);
+}
+.btn:hover .btn__line_left,
+.btn:active .btn__line_left {
+  bottom: 100%;
+  transition: 0.6s;
+  transition-delay: 0s;
+}
+.btn__line_right {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #2196f3);
+}
+.btn:hover .btn__line_right,
+.btn:active .btn__line_right {
+  top: 100%;
+  transition: 0.6s;
+  transition-delay: 0s;
+}
+.btn:hover,
+.btn:active {
+  box-shadow: 0 0 .7rem #2196f3, 0 0 1.4rem #2196f3, 0 0 2.8rem #2196f3;
+  background-color: #2196f3;
+  color: #333;
+  transition-delay: 0.3s;
+  cursor: pointer;
+}
+
+.btn-edit {
+  margin: 1.5rem auto;
+}
+
+.btn-remove {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: .5rem;
+  right: .5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  background-color: #2196f3;
+  box-shadow: 0 0 .7rem #2196f3, 0 0 1.4rem #2196f3;
+  cursor: pointer;
+}
+
+.btn-remove:hover,
+.btn-remove:active {
+  font-weight: normal;
+  box-shadow: none;
+}
+/***/
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.title a {
+  border-bottom: 2px solid #2196f3;
+}
+
+.title a:hover {
+  border: none;
+}
+
+.task-list-wrap {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.task {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+  border: 2px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0 0 1.5rem #2196f3;
 }
 
-.App-link {
-  color: #61dafb;
+.task:hover  {
+  cursor: cell;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task__text,
+.task__input {
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
 }
+
+.task__input {
+  padding: .2rem .4rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #000;
+  resize: none;
+}
+
+.task__input:focus {
+  border: 1px solid #2196f3;
+  box-shadow: 0 0 .3rem #2196f3 inset;
+}
+
+/* .task.read {
+  color: #aaa;
+  border-color: #aaa;
+  box-shadow: none;
+}
+
+.task.read .btn-edit {
+  color: #aaa;
+} */
