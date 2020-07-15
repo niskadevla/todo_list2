@@ -117,13 +117,32 @@
   padding: 2rem 0;
 }
 
-.title a {
+/* .title a {
   border-bottom: 2px solid #2196f3;
+} */
+
+.title a {
+  position: relative;
 }
 
-.title a:hover {
-  border: none;
+.title a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  /* height: 2px; */
+  border-bottom: 2px solid #2196f3;
+  transition: width .3s;
 }
+
+.title a:hover::after {
+  width: 100%;
+}
+
+/* .title a:hover {
+  border: none;
+} */
 
 .task-list-wrap {
   text-align: center;
@@ -157,13 +176,16 @@
   padding: .2rem .4rem;
   border: 1px solid transparent;
   border-radius: 5px;
-  color: #000;
-  resize: none;
+  color: #fff;
+  background-color: rgba(33, 150, 244, 0.7);
+  /* resize: none; */
 }
 
 .task__input:focus {
   border: 1px solid #2196f3;
-  box-shadow: 0 0 .3rem #2196f3 inset;
+  /* box-shadow: 0 0 .3rem #2196f3 inset; */
+  box-shadow: 0 0 .5rem #2196f3;
+  background-color: rgba(33, 150, 244, 0.6);
 }
 
 /* .task.read {
